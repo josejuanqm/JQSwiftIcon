@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'JQSwiftIcon'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of JQSwiftIcon.'
+  s.summary          = 'String interpolation made for icon fonts.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,20 +21,20 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/JQSwiftIcon'
+  s.homepage         = 'https://github.com/josejuanqm/JQSwiftIcon'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Jose Quintero' => 'jq@urbop.gt' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/JQSwiftIcon.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Jose Quintero' => 'jose.juan.qm@gmail.com' }
+  s.source           = { :git => 'https://github.com/josejuanqm/JQSwiftIcon.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/josejuanqm'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'JQSwiftIcon/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'JQSwiftIcon' => ['JQSwiftIcon/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'JQSwiftIcon' => ['JQSwiftIcon/Classes/Resources/*.ttf']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

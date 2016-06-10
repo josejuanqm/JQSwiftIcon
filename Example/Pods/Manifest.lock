@@ -1,0 +1,23 @@
+PODS:
+  - FBSnapshotTestCase (2.1.1):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.1)
+  - FBSnapshotTestCase/Core (2.1.1)
+  - FBSnapshotTestCase/SwiftSupport (2.1.1):
+    - FBSnapshotTestCase/Core
+  - JQSwiftIcon (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - JQSwiftIcon (from `../`)
+
+EXTERNAL SOURCES:
+  JQSwiftIcon:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
+  JQSwiftIcon: e879a6a7aabbc569c9ecf3862978249d0b43abd1
+
+PODFILE CHECKSUM: 310aa5238f17ed2f392a28dca4cf2302143ec03d
+
+COCOAPODS: 1.0.1

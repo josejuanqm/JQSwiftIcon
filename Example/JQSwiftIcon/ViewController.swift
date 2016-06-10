@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import JQSwiftIcon
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var iconLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        iconLabel.processIcons()
     }
 
     override func didReceiveMemoryWarning() {

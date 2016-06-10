@@ -1,0 +1,6 @@
+framework module JQSwiftIcon {
+  umbrella header "JQSwiftIcon-umbrella.h"
+
+  export *
+  module * { export * }
+}
