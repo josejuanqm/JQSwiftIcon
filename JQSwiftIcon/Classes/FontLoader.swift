@@ -11,7 +11,7 @@ import CoreText
 
 class FontLoader: NSObject {
     class func loadFont(fontName: String) {
-        var mainBundleURL = NSBundle(forClass: FontLoader.self)
+        let mainBundleURL = NSBundle(forClass: FontLoader.self)
         let subBundleURL = mainBundleURL.URLForResource("JQSwiftIcon", withExtension: "bundle")
         let bundle = NSBundle(URL: subBundleURL!)!
         var fontURL = NSURL()
