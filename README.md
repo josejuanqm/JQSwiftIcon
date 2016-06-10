@@ -6,7 +6,8 @@
 [![Platform](https://img.shields.io/cocoapods/p/JQSwiftIcon.svg?style=flat)](http://cocoapods.org/pods/JQSwiftIcon)
 
 
-![alt text](https://github.com/josejuanqm/JQSwiftIcon/CS/ib.png "IB Screenshot")![alt text](https://github.com/josejuanqm/JQSwiftIcon/CS/iphone.png "IB Screenshot")
+<img src="https://raw.githubusercontent.com/josejuanqm/JQSwiftIcon/master/CS/ib.png" width="48%">
+<img src="https://raw.githubusercontent.com/josejuanqm/JQSwiftIcon/master/CS/iphone.png" width="30%">
 
 
 ## Example
