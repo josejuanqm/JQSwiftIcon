@@ -11,14 +11,8 @@ Pod::Spec.new do |s|
   s.version          = '0.1.0'
   s.summary          = 'String interpolation made for icon fonts.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Easily implement Icon Fonts with iOS projects, using String interpolation JQSwiftIcon replaces arguments with real icons.
                        DESC
 
   s.homepage         = 'https://github.com/josejuanqm/JQSwiftIcon'
@@ -35,8 +29,4 @@ TODO: Add long description of the pod here.
   s.resource_bundles = {
     'JQSwiftIcon' => ['JQSwiftIcon/Classes/Resources/*.ttf']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
