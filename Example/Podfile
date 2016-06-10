@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JQSwiftIcon_Example' do
+  pod 'JQSwiftIcon', :path => '../'
+
+  target 'JQSwiftIcon_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
