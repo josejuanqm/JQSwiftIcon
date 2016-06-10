@@ -18,13 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mat:zoom.out.map adjust icon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-dX-TtB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fa:building" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi6-dX-TtB">
                                 <rect key="frame" x="218" y="289" width="165" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="oi6-dX-TtB" secondAttribute="height" multiplier="2:1" constant="123" id="hpb-Vy-82u"/>
+                                    <constraint firstAttribute="width" secondItem="oi6-dX-TtB" secondAttribute="height" multiplier="2:1" constant="123" id="hpb-Vy-82u">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="-89"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="165" id="xBd-Br-bo2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -41,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="245" y="217"/>
+            <point key="canvasLocation" x="244.5" y="216.75"/>
         </scene>
     </scenes>
 </document>

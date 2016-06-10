@@ -5,11 +5,49 @@
 [![License](https://img.shields.io/cocoapods/l/JQSwiftIcon.svg?style=flat)](http://cocoapods.org/pods/JQSwiftIcon)
 [![Platform](https://img.shields.io/cocoapods/p/JQSwiftIcon.svg?style=flat)](http://cocoapods.org/pods/JQSwiftIcon)
 
+
+![alt text](https://github.com/josejuanqm/JQSwiftIcon/CS/ib.png "IB Screenshot")![alt text](https://github.com/josejuanqm/JQSwiftIcon/CS/iphone.png "IB Screenshot")
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Cheat Sheets
+First, check out the Cheat Sheets
+######IMPORTANT: All clasess containing "_" or "-" have been replaced by "."
+
+| Name | Prefix | Cheat Sheet |
+|---|---|---|---|---|
+| Material Icons | mat | [Link](https://design.google.com/icons/) |
+| Font Awesome | fa | [Link](http://fontawesome.io/cheatsheet/) |
+| Ion Icons | ii | [Link](http://ionicons.com) |
+| Map Icons | mp | [Link](http://map-icons.com) |
+| Octicons | oi | [Link](https://octicons.github.com) |
+| Open Iconic | inic | [Link](https://useiconic.com/open/) |
+| Themify | th | [Link](http://themify.me/themify-icons) |
+
+## Placeholder Structure
+> ###< Prefix >:< Icon Class >
+
+##Usage
+
+In your UILabel, UIButton or UITextField, set a text containing a placeholder anywhere you want the icon to be. Somethink like this
+
+> fa:building
+
+Then you can choose between 2 ways you can use JQSwiftIcon.
+####1. No Custom Class
+
+Simply call processIcons on any UILabel, UIButton or UITextField that has a placeholder.
+
+```swift
+myLabel.processIcons()
+```
+####2. Custom Class
+
+The lazy way, just set your UILabel, UIButton class as JQIconLabel or JQIconButton, and thats it, your icons will be processed at runtime.
+
 
 ## Installation
 
