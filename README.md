@@ -9,6 +9,14 @@
 <img src="https://raw.githubusercontent.com/josejuanqm/JQSwiftIcon/master/CS/ib.png" width="48%">
 <img src="https://raw.githubusercontent.com/josejuanqm/JQSwiftIcon/master/CS/iphone.png" width="31%">
 
+## Installation
+
+JQSwiftIcon is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "JQSwiftIcon"
+```
 
 ## Example
 
@@ -48,16 +56,6 @@ myLabel.processIcons()
 ####2. Custom Class
 
 The lazy way, just set your UILabel, UIButton class as JQIconLabel or JQIconButton, and thats it, your icons will be processed at runtime.
-
-
-## Installation
-
-JQSwiftIcon is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "JQSwiftIcon"
-```
 
 ## Author
 
