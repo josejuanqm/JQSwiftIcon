@@ -22,7 +22,7 @@ pod "JQSwiftIcon"
 
 ## Author
 
-Jose Quintero, jq@urbop.gt
+Jose Quintero, jose.juan.qm@gmail.com
 
 ## License
 
