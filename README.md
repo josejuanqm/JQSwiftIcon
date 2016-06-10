@@ -7,7 +7,7 @@
 
 
 <img src="https://raw.githubusercontent.com/josejuanqm/JQSwiftIcon/master/CS/ib.png" width="48%">
-<img src="https://raw.githubusercontent.com/josejuanqm/JQSwiftIcon/master/CS/iphone.png" width="30%">
+<img src="https://raw.githubusercontent.com/josejuanqm/JQSwiftIcon/master/CS/iphone.png" width="31%">
 
 
 ## Example
@@ -16,7 +16,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Cheat Sheets
 First, check out the Cheat Sheets
-######IMPORTANT: All clasess containing "_" or "-" have been replaced by "."
+####IMPORTANT: All clasess containing "_" or "-" have been replaced by "."
 
 | Name | Prefix | Cheat Sheet |
 |---|---|---|---|---|
