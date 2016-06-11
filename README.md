@@ -48,7 +48,7 @@ In your UILabel, UIButton or UITextField, set a text containing a placeholder an
 Then you can choose between 2 ways you can use JQSwiftIcon.
 ####1. No Custom Class
 
-Simply call processIcons on any UILabel, UIButton or UITextField that has a placeholder.
+Simply import JQSwiftIcon and call processIcons on any UILabel, UIButton or UITextField that has a placeholder.
 
 ```swift
 myLabel.processIcons()
