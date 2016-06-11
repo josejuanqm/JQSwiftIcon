@@ -1,6 +1,6 @@
 # JQSwiftIcon
 
-[![CI Status](http://img.shields.io/travis/Jose Quintero/JQSwiftIcon.svg?style=flat)](https://travis-ci.org/Jose Quintero/JQSwiftIcon)
+[![Build Status](https://travis-ci.org/josejuanqm/JQSwiftIcon.svg?branch=master)](https://travis-ci.org/josejuanqm/JQSwiftIcon)
 [![Version](https://img.shields.io/cocoapods/v/JQSwiftIcon.svg?style=flat)](http://cocoapods.org/pods/JQSwiftIcon)
 [![License](https://img.shields.io/cocoapods/l/JQSwiftIcon.svg?style=flat)](http://cocoapods.org/pods/JQSwiftIcon)
 [![Platform](https://img.shields.io/cocoapods/p/JQSwiftIcon.svg?style=flat)](http://cocoapods.org/pods/JQSwiftIcon)
