@@ -1,3 +1,10 @@
+##This repository is now being mantained by [0x73](https://github.com/0x73) at [SwiftIconFont](https://github.com/0x73/SwiftIconFont)
+
+
+---
+---
+---
+
 # JQSwiftIcon
 
 [![Build Status](https://travis-ci.org/josejuanqm/JQSwiftIcon.svg?branch=master)](https://travis-ci.org/josejuanqm/JQSwiftIcon)
