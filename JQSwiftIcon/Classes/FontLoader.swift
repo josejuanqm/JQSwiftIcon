@@ -10,26 +10,26 @@ import UIKit
 import CoreText
 
 class FontLoader: NSObject {
-    class func loadFont(fontName: String) {
-        let mainBundleURL = NSBundle(forClass: FontLoader.self)
-        let subBundleURL = mainBundleURL.URLForResource("JQSwiftIcon", withExtension: "bundle")
-        let bundle = NSBundle(URL: subBundleURL!)!
-        var fontURL = NSURL()
-        for name : String in bundle.pathsForResourcesOfType("ttf", inDirectory: nil) {
-            if name.lowercaseString.rangeOfString(fontName) != nil {
-                fontURL = NSURL(fileURLWithPath: name)
+    class func loadFont(_ fontName: String) {
+        let mainBundleURL: Bundle = Bundle(for: FontLoader.self)
+        let subBundleURL = mainBundleURL.url(forResource: "JQSwiftIcon", withExtension: "bundle")
+        let bundle = Bundle(url: subBundleURL!)!
+        var fontURL: URL = URL(fileURLWithPath: "")
+        for name : String in bundle.paths(forResourcesOfType: "ttf", inDirectory: nil) {
+            if name.lowercased().range(of: fontName) != nil {
+                fontURL = URL(fileURLWithPath: name)
             }
         }
 
-        let data = NSData(contentsOfURL: fontURL)!
-        let provider = CGDataProviderCreateWithCFData(data)
-        let font = CGFontCreateWithDataProvider(provider)!
+        let data = try! Data(contentsOf: fontURL)
+        let provider = CGDataProvider(data: data as CFData)
+        let font = CGFont(provider!)
 
         var error: Unmanaged<CFError>?
         if !CTFontManagerRegisterGraphicsFont(font, &error) {
-            let errorDescription: CFStringRef = CFErrorCopyDescription(error!.takeUnretainedValue())
+            let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
             let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-            NSException(name: NSInternalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+            NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
         }
     }
 }
