@@ -6,6 +6,15 @@ target 'JQSwiftIcon_Example' do
   target 'JQSwiftIcon_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+    pod 'FBSnapshotTestCase', :git => 'https://github.com/facebook/ios-snapshot-test-case'
+  end
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
   end
 end
+
