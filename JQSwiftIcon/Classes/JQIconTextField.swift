@@ -16,9 +16,9 @@ class JQIconTextField: UITextField {
             self.processIcons()
         }
     }
-    
+
     override func awakeFromNib() {
-        if self.font!.fontName.containsString("Awesome") || self.font!.fontName.containsString("icon") || self.font!.fontName.containsString("themify"){
+        if self.font!.fontName.contains("Awesome") || self.font!.fontName.contains("icon") || self.font!.fontName.contains("themify"){
             return
         }
         self.processIcons()

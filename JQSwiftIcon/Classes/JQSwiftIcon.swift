@@ -1,7 +1,7 @@
 //
 //  JQSwiftIcon.swift
 //
-//  Created by Jose Quintero on 9/11/2016 and tweaked by Roman Zhyliov on 08/08/2016.
+//  Created by Jose Quintero on 8/6/2016 and tweaked by Roman Zhyliov on 08/08/2016.
 //  Copyright © 2016 Jose Quintero. All rights reserved.
 //
 
@@ -31,64 +31,63 @@ public enum FontsFileNames: String {
     , Material     = "materialicons-regular"
 }
 
-func processFont(fontSize: CGFloat?, fontFileName: FontsFileNames, attributedString: NSMutableAttributedString, matchedStringArray: [String], substring: String!) {
-    
+func processFont(_ fontSize: CGFloat?, fontFileName: FontsFileNames, attributedString: NSMutableAttributedString, matchedStringArray: [String], substring: String!) {
+
     let substringRange = NSMakeRange(0, substring.characters.count);
-    attributedString.replaceCharactersInRange(substringRange, withString: String.iconWithCode(fontFileName, code: matchedStringArray[1])!)
+    attributedString.replaceCharacters(in: substringRange, with: String.iconWithCode(fontFileName, code: matchedStringArray[1])!)
     let newRange = _NSRange(location: substringRange.location, length: 1)
     attributedString.addAttribute(NSFontAttributeName, value: UIFont.iconFontOfSize(fontFileName, fontSize: (fontSize)!), range: newRange)
 }
 
-func processFontPrefixes(fontSize: CGFloat?, attributedString: NSMutableAttributedString, matchedStringArray: [String], substring: String!) {
-    if let _ = fontAwesomeIconArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "fa"{
+func processFontPrefixes(_ fontSize: CGFloat?, attributedString: NSMutableAttributedString, matchedStringArray: [String], substring: String!) {
+    if let _ = fontAwesomeIconArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "fa"{
         processFont(fontSize, fontFileName: FontsFileNames.FontAwesome, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = ioniconArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "ii"{
+    if let _ = ioniconArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "ii"{
         processFont(fontSize, fontFileName: FontsFileNames.Ionicon, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = octiconArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "oi"{
+    if let _ = octiconArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "oi"{
         processFont(fontSize, fontFileName: FontsFileNames.Octicon, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = iconicIconArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "inic"{
+    if let _ = iconicIconArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "inic"{
         processFont(fontSize, fontFileName: FontsFileNames.Iconic, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = elegantIconArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "el"{
+    if let _ = elegantIconArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "el"{
         processFont(fontSize, fontFileName: FontsFileNames.ElegantIcons, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = themifyIconArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "th"{
+    if let _ = themifyIconArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "th"{
         processFont(fontSize, fontFileName: FontsFileNames.Themify, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = mapIconsArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "mp"{
+    if let _ = mapIconsArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "mp"{
         processFont(fontSize, fontFileName: FontsFileNames.MapIcons, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = stroke7Arr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "pe"{
+    if let _ = stroke7Arr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "pe"{
         processFont(fontSize, fontFileName: FontsFileNames.Stroke7, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
-    if let _ = materialIconArr[matchedStringArray[1]] where matchedStringArray[0].lowercaseString == "mat"{
+    if let _ = materialIconArr[matchedStringArray[1]] , matchedStringArray[0].lowercased() == "mat"{
         processFont(fontSize, fontFileName: FontsFileNames.Material, attributedString: attributedString, matchedStringArray: matchedStringArray, substring: substring);
     }
 }
 
 func processTextIcons(
-    textToCheck: NSString,
+    _ textToCheck: NSString,
     pointSize: CGFloat,
     attributedStringToCheck: NSAttributedString,
     setTextCallback: (NSAttributedString) -> Void) {
-    
+
     let text = textToCheck;
     let textRange = NSMakeRange(0, text.length)
     let attributedString = NSMutableAttributedString(string: textToCheck as String)
-    
-    text.enumerateSubstringsInRange(textRange, options: .ByWords, usingBlock: {
-        (substring, substringRange, _, _) in
-        var s = ["", ""]
-        s = substring!.characters.split{$0 == ":"}.map(String.init)
-        if s.count == 1{
-            return
-        }
-        processFontPrefixes(pointSize, attributedString: attributedString, matchedStringArray: s, substring: substring)
-    })
-    
+
+    let subStr = textToCheck.substring(with: textRange);
+    var s = ["", ""];
+    s = subStr.characters.split{$0 == ":"}.map(String.init)
+    if s.count == 1{
+        return
+    }
+    processFontPrefixes(pointSize, attributedString: attributedString, matchedStringArray: s, substring: subStr)
+
+
     //when the view is about to be released -> overassignment mightn happen
     //which will cause visual font issue
     if (attributedStringToCheck.string != attributedString.string) {
@@ -98,7 +97,7 @@ func processTextIcons(
 
 
 public struct FontArr {
-    static func getFontArr(fromFont: FontsFileNames) -> [String: String]{
+    static func getFontArr(_ fromFont: FontsFileNames) -> [String: String]{
         if fromFont == .FontAwesome{
             return fontAwesomeIconArr
         }else if fromFont == .Iconic {
@@ -125,10 +124,10 @@ public extension UILabel {
     func processIcons() {
         processTextIcons(self.text! as NSString, pointSize: self.font!.pointSize, attributedStringToCheck: self.attributedText!, setTextCallback: {(attributedString: NSAttributedString) in
             self.attributedText = attributedString
-        })
+            })
     }
-    
-    func setTextWithIconFont(font: FontsFileNames, size: CGFloat = 15.0, text: String){
+
+    func setTextWithIconFont(_ font: FontsFileNames, size: CGFloat = 15.0, text: String){
         self.font = UIFont.iconFontOfSize(font, fontSize: size)
         self.text = text
     }
@@ -140,8 +139,8 @@ public extension UITextField{
             self.attributedText = attributedString
         })
     }
-    
-    func setTextWithIconFont(font: FontsFileNames, size: CGFloat = 15.0, text: String){
+
+    func setTextWithIconFont(_ font: FontsFileNames, size: CGFloat = 15.0, text: String){
         self.font = UIFont.iconFontOfSize(font, fontSize: size)
         self.text = text
     }
@@ -150,32 +149,29 @@ public extension UITextField{
 public extension UIButton {
     func processIcons() {
         processTextIcons((self.titleLabel?.text)! as NSString, pointSize: (self.titleLabel?.font!.pointSize)!, attributedStringToCheck: (self.titleLabel?.attributedText)!, setTextCallback: {(attributedString: NSAttributedString) in
-            self.setAttributedTitle(attributedString, forState: .Normal)
+            self.setAttributedTitle(attributedString, for: UIControlState())
         })
     }
-    
-    func setTextWithIconFont(font: FontsFileNames, size: CGFloat = 15.0, text: String){
+
+    func setTextWithIconFont(_ font: FontsFileNames, size: CGFloat = 15.0, text: String){
         self.titleLabel?.font = UIFont.iconFontOfSize(font, fontSize: size)
         self.titleLabel?.text = text
     }
 }
 
 public extension UIFont{
-    static func iconFontOfSize(font: FontsFileNames, fontSize: CGFloat) -> UIFont {
+    static func iconFontOfSize(_ font: FontsFileNames, fontSize: CGFloat) -> UIFont {
         let fontFileName = font.rawValue
         let fontName = FontNames[fontFileName]
-        var token: dispatch_once_t = 0
-        if (UIFont.fontNamesForFamilyName(fontName!).count == 0) {
-            dispatch_once(&token) {
-                FontLoader.loadFont(fontFileName.lowercaseString)
-            }
+        if (UIFont.fontNames(forFamilyName: fontName!).count == 0) {
+            FontLoader.loadFont(fontFileName.lowercased())
         }
         return UIFont(name: fontName!, size: fontSize)!
     }
 }
 
 public extension String {
-    public static func iconWithCode(font: FontsFileNames, code: String) -> String? {
+    public static func iconWithCode(_ font: FontsFileNames, code: String) -> String? {
         if let icon = FontArr.getFontArr(font)[code] {
             return icon
         }

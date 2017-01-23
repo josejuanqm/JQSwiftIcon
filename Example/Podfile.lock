@@ -1,23 +1,30 @@
 PODS:
-  - FBSnapshotTestCase (2.1.1):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.1)
-  - FBSnapshotTestCase/Core (2.1.1)
-  - FBSnapshotTestCase/SwiftSupport (2.1.1):
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - JQSwiftIcon (0.1.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase
+  - FBSnapshotTestCase (from `https://github.com/facebook/ios-snapshot-test-case`)
   - JQSwiftIcon (from `../`)
 
 EXTERNAL SOURCES:
+  FBSnapshotTestCase:
+    :git: https://github.com/facebook/ios-snapshot-test-case
   JQSwiftIcon:
-    :path: ../
+    :path: "../"
+
+CHECKOUT OPTIONS:
+  FBSnapshotTestCase:
+    :commit: a8c9288fb150ea497c1562649663043bd8b113df
+    :git: https://github.com/facebook/ios-snapshot-test-case
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
-  JQSwiftIcon: e879a6a7aabbc569c9ecf3862978249d0b43abd1
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  JQSwiftIcon: cb6f5ecfe556f3a345cb3bf9d754ae9ae144a421
 
-PODFILE CHECKSUM: 310aa5238f17ed2f392a28dca4cf2302143ec03d
+PODFILE CHECKSUM: 8c95a984b691186cbbfc5c573ff637750fed8cf9
 
 COCOAPODS: 1.0.1

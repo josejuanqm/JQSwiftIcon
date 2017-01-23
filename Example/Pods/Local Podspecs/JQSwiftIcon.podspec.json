@@ -2,7 +2,7 @@
   "name": "JQSwiftIcon",
   "version": "0.1.0",
   "summary": "String interpolation made for icon fonts.",
-  "description": "TODO: Add long description of the pod here.",
+  "description": "Easily implement Icon Fonts with iOS projects, using String interpolation JQSwiftIcon replaces arguments with real icons.",
   "homepage": "https://github.com/josejuanqm/JQSwiftIcon",
   "license": {
     "type": "MIT",
